@@ -18,21 +18,21 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '5.x'
+#- task: UseDotNet@2
+#  inputs:
+#    packageType: 'sdk'
+#    version: '5.x'
 
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet build'
-  inputs:
-    command: 'build'
-    workingDirectory: '/'
+#- task: DotNetCoreCLI@2
+#  displayName: 'dotnet build'
+#  inputs:
+#    command: 'build'
+#    workingDirectory: '/'
 
 # Command line
 # Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
 - task: CmdLine@2
   inputs:
-    script: 'tree \'
+    script: 'echo tree \'
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
