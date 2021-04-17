@@ -27,4 +27,5 @@ steps:
   displayName: 'dotnet build'
   inputs:
     command: 'build'
-    projects: '**/*.csproj'
+    workingDirectory: '/'
+
