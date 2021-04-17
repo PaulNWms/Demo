@@ -52,3 +52,9 @@ steps:
   inputs:
     command: 'build'
 #    workingDirectory: '/'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'drop'
+    publishLocation: 'pipeline'
