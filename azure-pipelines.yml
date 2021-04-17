@@ -49,6 +49,6 @@ steps:
 
       echo "$(Build.SourcesDirectory)"
 
-      dir /s /b $(Build.SourcesDirectory)
+      dir $(Build.SourcesDirectory)
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
