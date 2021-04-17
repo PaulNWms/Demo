@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  solution: '**/Demo.sln'
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -18,8 +21,6 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: DotNetCoreCLI@2
+- task: VSBuild@1
   inputs:
-    command: 'build'
-    projects: 'Demo.sln'
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    solution: '$(solution)'
