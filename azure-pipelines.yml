@@ -33,6 +33,20 @@ steps:
 # Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
 - task: CmdLine@2
   inputs:
-    script: 'echo tree \'
+    script: |
+      echo "Structure of work folder of this pipeline:"
+      tree $(Agent.WorkFolder)\1 /f
+
+      echo "Build.ArtifactStagingDirectory:" 
+
+      echo "$(Build.ArtifactStagingDirectory)"
+
+      echo "Build.BinariesDirectory:" 
+
+      echo "$(Build.BinariesDirectory)"
+
+      echo "Build.SourcesDirectory:"
+
+      echo "$(Build.SourcesDirectory)"
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
